@@ -2,8 +2,10 @@ import { Button, Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import './detailItem.css'
 import ItemCount from "../ItemCount/ItemCount"
-import { cartContext } from "../Context/Context"
+import { cartContext } from "../ContextCart/ContextCart"
 import { useContext } from "react"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const DetailItem = ({producto}) => {
 
     const { añadiralCart,cartList } = useContext(cartContext)
@@ -11,7 +13,7 @@ const DetailItem = ({producto}) => {
         añadiralCart({ ...producto, cantidad })
         
     }
-   
+    
     return (
         <section>
             <div className="container">
@@ -40,7 +42,7 @@ const DetailItem = ({producto}) => {
                                     <span className="size" data-toggle="tooltip" title="xtra large">xl</span>
                                 </h5>
                                 <ItemCount clickAddToCart={clickAddToCart} />
-
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>

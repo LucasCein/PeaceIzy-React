@@ -2,23 +2,29 @@ import { useParams } from "react-router-dom"
 import DetailItem from "../DetailItem/DetailItem"
 import { useEffect, useState } from "react"
 import { mfetch } from "../../utils/mfetch"
+import { doc, getDoc, getFirestore } from "firebase/firestore"
 
 const DetailItemContainer = () => {
-    const {idpd} = useParams()
-    const [filterProd,setFilterProd] = useState()
-    const [isLoading, setIsLoading] = useState(true)
-    useEffect(() => {
+  const { idpd } = useParams()
+  const [filterProd, setFilterProd] = useState()
+  const [isLoading, setIsLoading] = useState(true)
+  useEffect(() => {
 
-        mfetch()
-            .then(rdo => {
-                setFilterProd(rdo.find(productos => productos.id === idpd))
-            })
-            .catch(error => console.log(error))
-            .finally(() => setIsLoading(false))
-    }, [idpd])
+    
+      const dbFirestore = getFirestore()
+      const queryDoc = doc(dbFirestore, 'productos', idpd)
+
+      getDoc(queryDoc) 
+        .then(resp => setFilterProd({ id: resp.id, ...resp.data() }))
+        .catch(err => console.log(err))
+        .finally(() => setIsLoading(false))
+
+   
+
+  }, [idpd])
   return (
     <div>
-        {isLoading ?
+      {isLoading ?
         <h2>Cargando...</h2>
         :
         <DetailItem producto={filterProd} />

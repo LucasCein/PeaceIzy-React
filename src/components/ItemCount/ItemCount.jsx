@@ -4,7 +4,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import useCounter from '../../hooks/useCounter'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
-import { cartContext } from '../Context/Context'
+import { cartContext } from '../ContextCart/ContextCart'
+import { toast } from 'react-toastify'
 const ItemCount = ({clickAddToCart}) => {
 
     const { counter, sumCount, resCount } = useCounter()

@@ -1,6 +1,6 @@
 import { Modal, Button } from 'react-bootstrap';
 import { useContext, useState } from 'react';
-import { cartContext } from '../Context/Context';
+import { cartContext } from '../ContextCart/ContextCart';
 import useCounter from '../../hooks/useCounter';
 const Cart = ({ onClose }) => {
     const { cartList, handleRemoveItem, totalPrice } = useContext(cartContext)

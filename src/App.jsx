@@ -4,7 +4,7 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { Navigate, Route, BrowserRouter, Routes } from 'react-router-dom'
 import DetailItemContainer from './components/DetailItemContainer/DetailItemContainer'
 import { createContext, useContext } from 'react'
-import { ProviderCartContext, cartContext } from './components/Context/Context'
+import { ProviderCartContext, cartContext } from './components/ContextCart/ContextCart'
 import Cart from './components/Cart/Cart'
 
 function App() {
