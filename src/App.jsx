@@ -6,6 +6,7 @@ import DetailItemContainer from './components/DetailItemContainer/DetailItemCont
 import { createContext, useContext } from 'react'
 import { ProviderCartContext, cartContext } from './components/ContextCart/ContextCart'
 import Cart from './components/Cart/Cart'
+import Checkout from './components/Checkout/Checkout'
 
 function App() {
  
@@ -26,6 +27,10 @@ function App() {
             <Route 
             path='/detail/:idpd'
             element={<DetailItemContainer />} 
+            />
+            <Route 
+            path='/checkout'
+            element={<Checkout/>} 
             />
             <Route 
             path='*'

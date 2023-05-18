@@ -2,6 +2,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { cartContext } from '../ContextCart/ContextCart';
 import useCounter from '../../hooks/useCounter';
+import { Link } from 'react-router-dom';
 const Cart = ({ onClose }) => {
     const { cartList, handleRemoveItem, totalPrice } = useContext(cartContext)
     return (
@@ -34,7 +35,9 @@ const Cart = ({ onClose }) => {
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={onClose}>Seguir comprando</Button>
-                <Button variant="primary" disabled={cartList.length === 0}>Comprar</Button>
+                <Link to={'/checkout'} >
+                    <Button variant="primary" disabled={cartList.length === 0} onClick={onClose}>Comprar</Button>
+                </Link>
             </Modal.Footer>
         </Modal>
     );
