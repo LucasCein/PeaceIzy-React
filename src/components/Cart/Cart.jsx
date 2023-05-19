@@ -1,8 +1,8 @@
 import { Modal, Button } from 'react-bootstrap';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { cartContext } from '../ContextCart/ContextCart';
-import useCounter from '../../hooks/useCounter';
 import { Link } from 'react-router-dom';
+import CartList from '../CartList/CartList';
 const Cart = ({ onClose }) => {
     const { cartList, handleRemoveItem, totalPrice } = useContext(cartContext)
     return (
@@ -14,23 +14,7 @@ const Cart = ({ onClose }) => {
                 {cartList.length === 0 ? (
                     <p>Tu carrito de compras está vacío</p>
                 ) : (
-                    <ul>
-                        {cartList.map((item) => (
-                            <div key={item.id} className="d-flex align-items-center justify-content-between mb-3">
-                                <img src={item.picture} alt={item.Title} width="100" height="100" className="mr-3" />
-                                <div>
-                                    <h5>{item.Title}</h5>
-                                    <p>Precio: ${item.price}</p>
-                                    <p>Cantidad: {item.cantidad}</p>
-                                </div>
-                                <button className="btn btn-danger" onClick={() => handleRemoveItem(item.id)}>Eliminar</button>
-                            </div>
-                        ))}
-                        <hr />
-                        <div className="d-flex align-items-center justify-content-between">
-                            <h4>Total: ${totalPrice}</h4>
-                        </div>
-                    </ul>
+                    <CartList cartList={cartList} handleRemoveItem={handleRemoveItem} totalPrice={totalPrice}/>
                 )}
             </Modal.Body>
             <Modal.Footer>

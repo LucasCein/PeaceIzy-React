@@ -1,5 +1,3 @@
-import { Button, Card } from "react-bootstrap"
-import { Link } from "react-router-dom"
 import './detailItem.css'
 import ItemCount from "../ItemCount/ItemCount"
 import { cartContext } from "../ContextCart/ContextCart"

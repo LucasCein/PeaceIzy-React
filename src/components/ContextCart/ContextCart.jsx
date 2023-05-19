@@ -10,7 +10,6 @@ export const ProviderCartContext = ({ children }) => {
 
 
     const [cartList, setCartList] = useState([])
-    const [precioTotal, setPrecioTotal] = useState([])
     const showToastMessage = () => {
         toast.success('Se ha agregado al carrito', {
             position: "top-right",
@@ -29,7 +28,7 @@ export const ProviderCartContext = ({ children }) => {
 
         if (findProduct !== undefined) {
             let newCartList = cartList.map(prod => {
-                if (prod.id == product.id) {
+                if (prod.id === product.id) {
                     return { ...prod, cantidad: prod.cantidad+product.cantidad }
                 }
                 return prod

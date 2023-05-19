@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
 import DetailItem from "../DetailItem/DetailItem"
 import { useEffect, useState } from "react"
-import { mfetch } from "../../utils/mfetch"
 import { doc, getDoc, getFirestore } from "firebase/firestore"
+import CustomSpinner from "../CustomSpinner/CustomSpinner"
 
 const DetailItemContainer = () => {
   const { idpd } = useParams()
@@ -25,7 +25,7 @@ const DetailItemContainer = () => {
   return (
     <div>
       {isLoading ?
-        <h2>Cargando...</h2>
+        <CustomSpinner/>
         :
         <DetailItem producto={filterProd} />
       }

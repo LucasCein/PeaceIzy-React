@@ -6,7 +6,9 @@ import DetailItemContainer from './components/DetailItemContainer/DetailItemCont
 import { createContext, useContext } from 'react'
 import { ProviderCartContext, cartContext } from './components/ContextCart/ContextCart'
 import Cart from './components/Cart/Cart'
-import Checkout from './components/Checkout/Checkout'
+import Checkout from './components/CheckoutContainer/CheckoutContainer'
+import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
+import Footer from './components/Footer/Footer'
 
 function App() {
  
@@ -33,12 +35,16 @@ function App() {
             element={<Checkout/>} 
             />
             <Route 
+            path='/orderConfirmation'
+            element={<OrderConfirmation/>} 
+            />
+            <Route 
             path='*'
             element={<Navigate to="/"/>} 
             />
         
           </Routes>
-          
+          <Footer/>
         </BrowserRouter>
       
     </ProviderCartContext>
