@@ -9,6 +9,12 @@ Este proyecto se trata de una e-commerce la cual utiliza productos a modo de eje
 - Poder generar la orden de compra
 
 
+## Librerias Utilizadas
+- fontAwesome: fue utilizada para los logos de las redes sociales y para los simbolos de mayor y menor a la hora de agregar un producto
+- react-spinners: utilizada para el spinner
+- react-toastify: utilizada para el aviso de que se agrego un producto al carrito con exito
+
+
 ## Capturas de Pantalla
 
 ![image](https://github.com/LucasCein/PeaceIzy-React/assets/91496200/d74e50a7-9d41-4a1a-b8d6-c007733707de)
