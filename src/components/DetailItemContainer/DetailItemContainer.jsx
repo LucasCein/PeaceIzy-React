@@ -27,7 +27,7 @@ const DetailItemContainer = () => {
       {isLoading ?
         <CustomSpinner/>
         :
-        <DetailItem producto={filterProd} />
+        <DetailItem product={filterProd} />
       }
     </div>
   )

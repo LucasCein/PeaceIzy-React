@@ -2,13 +2,13 @@ import './detailItem.css'
 import ItemCount from "../ItemCount/ItemCount"
 import { cartContext } from "../ContextCart/ContextCart"
 import { useContext } from "react"
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const DetailItem = ({producto}) => {
+const DetailItem = ({product}) => {
 
-    const { añadiralCart,cartList } = useContext(cartContext)
-    const clickAddToCart = (cantidad) => {
-        añadiralCart({ ...producto, cantidad })
+    const { addToCart} = useContext(cartContext)
+    const clickAddToCart = (quantity) => {
+        addToCart({ ...product, quantity })
         
     }
     
@@ -21,17 +21,17 @@ const DetailItem = ({producto}) => {
                             <div className="preview col-md-6">
 
                                 <div className="w-75">
-                                    <img src={producto.picture} className="w-auto" />
+                                    <img src={product.picture} className="w-auto" />
 
                                 </div>
 
                             </div>
                             <div className="details col-md-6">
-                                <h3 className="product-title">{producto.Title}</h3>
-                                <h6 className="font-weight-bold">{producto.category}</h6>
+                                <h3 className="product-title">{product.Title}</h3>
+                                <h6 className="font-weight-bold">{product.category}</h6>
 
                                 <p className="product-description mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis esse ratione officia animi fuga dolorem sequi.</p>
-                                <h4 className="price">Precio: <span>${producto.price}</span></h4>
+                                <h4 className="price">Precio: <span>${product.price}</span></h4>
                                 <p className="vote"><strong>91%</strong> de los compradores disfrutaron este producto! <strong>(87 votos)</strong></p>
                                 <h5 className="sizes mb-4">sizes:
                                     <span className="size" data-toggle="tooltip" title="small">s</span>

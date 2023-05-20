@@ -9,7 +9,7 @@ const CartList = ({totalPrice,handleRemoveItem,cartList}) => {
                         <div>
                             <h5>{item.Title}</h5>
                             <p>Precio: ${item.price}</p>
-                            <p>Cantidad: {item.cantidad}</p>
+                            <p>Cantidad: {item.quantity}</p>
                         </div>
                         <button className="btn btn-danger" onClick={() => handleRemoveItem(item.id)}>Eliminar</button>
                     </div>

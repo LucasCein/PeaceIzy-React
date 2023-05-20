@@ -22,14 +22,14 @@ export const ProviderCartContext = ({ children }) => {
             theme: "light",
         });
     };
-    const añadiralCart = (product) => {
+    const addToCart = (product) => {
         
         let findProduct = cartList.find((prod) => prod.id == product.id)
 
         if (findProduct !== undefined) {
             let newCartList = cartList.map(prod => {
                 if (prod.id === product.id) {
-                    return { ...prod, cantidad: prod.cantidad+product.cantidad }
+                    return { ...prod, quantity: prod.quantity+product.quantity }
                 }
                 return prod
                 
@@ -49,16 +49,16 @@ export const ProviderCartContext = ({ children }) => {
     };
 
     const totalPrice = cartList.reduce((total, item) => {
-        return total + (parseInt(item.price) * item.cantidad);
+        return total + (parseInt(item.price) * item.quantity);
     }, 0);
 
-    const cartItemsCount = cartList.reduce((acc, item) => acc + item.cantidad, 0);
+    const cartItemsCount = cartList.reduce((acc, item) => acc + item.quantity, 0);
 
-    const vaciarCart = () => {
+    const emptyCart = () => {
         setCartList([])
     }
     return (
-        <cartContext.Provider value={{ cartList, añadiralCart, vaciarCart, handleRemoveItem, totalPrice, cartItemsCount }}>
+        <cartContext.Provider value={{ cartList, addToCart, emptyCart, handleRemoveItem, totalPrice, cartItemsCount }}>
             {children}
             <ToastContainer />
         </cartContext.Provider>

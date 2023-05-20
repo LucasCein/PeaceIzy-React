@@ -1,6 +1,6 @@
 # Nombre del Proyecto
 
-Breve descripción o introducción al proyecto.
+Este proyecto se trata de una e-commerce la cual utiliza productos a modo de ejemplo pero fue realizada con la idea de que sea la pagina de la marca peace izy. Esta e-commerce nos permite ver los productos, ya sea todos o filtrados y ademas poder realiazr la compra de cualquiera de ellos
 
 ## Características
 - Estas son algunas de las caracteristicas:
