@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart'
 import Checkout from './components/CheckoutContainer/CheckoutContainer'
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
 import Footer from './components/Footer/Footer'
+import InitContainer from './components/InitContainer/InitContainer'
 
 function App() {
  
@@ -20,6 +21,10 @@ function App() {
           <Routes>
             <Route 
             path='/'
+            element={<InitContainer />} 
+            />
+            <Route 
+            path='/productos'
             element={<ItemListContainer />} 
             />
             <Route 
@@ -33,6 +38,10 @@ function App() {
             <Route 
             path='/checkout'
             element={<Checkout/>} 
+            />
+            <Route 
+            path='/orderConfirmation'
+            element={<OrderConfirmation/>} 
             />
             <Route 
             path='/orderConfirmation'

@@ -31,7 +31,7 @@ const ItemCount = ({clickAddToCart}) => {
 
             </section>
             <div className="action mt-5">
-                <Link to='/cart'>
+                <Link to='/productos'>
                     <button className="add-to-cart btn btn-default" type="button" onClick={() =>{clickAddToCart(counter)} } >Añadir al Carrito</button>
                 </Link >
                 <Link to='/'>

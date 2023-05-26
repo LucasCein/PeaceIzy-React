@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import Item from "../Item/Item"
 
 const ItemList = ({ productos }) => {
-    
+   
     return (
         <div>
             <Row xs={1} md={4} className="ms-2 me-2 mt-2">

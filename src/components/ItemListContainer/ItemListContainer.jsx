@@ -16,8 +16,6 @@ export const ItemListContainer = () => {
     const queryCollectionFiltered = !cpd ? queryCollection : query(
       queryCollection,
       where('category', '==', cpd),
-      // orderBy('price', 'asc'),
-      // limit(1)
     )
 
     getDocs(queryCollectionFiltered)

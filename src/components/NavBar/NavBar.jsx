@@ -1,6 +1,6 @@
-import {  Nav, Navbar } from "react-bootstrap"
+import { Nav, NavDropdown, Navbar } from "react-bootstrap"
 import { CartWidget } from "../CartWidget/CartWidget"
-import { Link, NavLink} from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import './navbar.css'
 export const NavBar = () => {
 
@@ -16,12 +16,21 @@ export const NavBar = () => {
             <Navbar.Collapse id="responsive-navbar-nav" >
                 <section className="mx-auto">
                     <Nav className="me-auto marginSections">
-                        <NavLink to="/" className={({isActive})=> isActive ? "sectionActive" : "sectionStyle"} >Inicio</NavLink>
-                        <NavLink to="/category/buzo" className={({isActive})=> isActive ? "sectionActive" : "sectionStyle"}>Buzos</NavLink>
-                        <NavLink to="/category/pantalon" className={({isActive})=> isActive ? "sectionActive" : "sectionStyle"}>Pantalones</NavLink>
-                        {/* <Nav.Link href="#pricing">Productos</Nav.Link>
-                        <Nav.Link href="#Aboutus">Nosotros</Nav.Link>
-                        <Nav.Link href="#contact">Contacto</Nav.Link>*/}
+                        <section className="centerItemsNavs">
+                        <NavLink to="/" className={({ isActive }) => isActive ? "sectionActive" : "sectionStyle"} >Inicio</NavLink>
+                        </section>
+                        <section className="centerItemsNavs">
+                        <NavLink to="/productos" className={({ isActive }) => isActive ? "sectionActive" : "sectionStyle"} >Productos</NavLink>
+
+                        </section>
+
+                        <NavDropdown title="Categorias"  className="sectionStyle">
+                            <NavDropdown.Item as={Link} to={'/category/buzo'}>Buzos</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/category/pantalon'}>
+                                Pantalones
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                            
                     </Nav>
                 </section>
 
