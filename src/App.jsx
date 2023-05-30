@@ -10,6 +10,7 @@ import Checkout from './components/CheckoutContainer/CheckoutContainer'
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
 import Footer from './components/Footer/Footer'
 import InitContainer from './components/InitContainer/InitContainer'
+import Login from './components/Login/Login'
 
 function App() {
  
@@ -19,9 +20,13 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <Routes>
+          {/* <Route
+            path='/'
+            element={<InitContainer />}
+          /> */}
             <Route 
             path='/'
-            element={<InitContainer />} 
+            element={<Login />} 
             />
             <Route 
             path='/productos'
