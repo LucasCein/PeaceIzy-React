@@ -2,6 +2,7 @@ import { Nav, NavDropdown, Navbar } from "react-bootstrap"
 import { CartWidget } from "../CartWidget/CartWidget"
 import { Link, NavLink } from "react-router-dom"
 import './navbar.css'
+import LoginWidget from "../LoginWidget/LoginWidget"
 export const NavBar = () => {
 
     return (
@@ -35,8 +36,12 @@ export const NavBar = () => {
                 </section>
 
                 <Nav>
-                    <Nav.Link eventKey={2} href="" className="marginCart">
+                    <Nav.Link eventKey={2} href="" className="">
                         <CartWidget />
+                        
+                    </Nav.Link>
+                    <Nav.Link eventKey={2} href="" className="marginCart">
+                        <LoginWidget></LoginWidget>
                     </Nav.Link>
                 </Nav>
             </Navbar.Collapse>

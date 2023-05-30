@@ -13,7 +13,9 @@ export const CartWidget = () => {
         <button className="btn btn-dark" onClick={() => setShowCartModal(true)}><img src="https://img.icons8.com/emoji/25/null/shopping-cart-emoji.png" alt="" />{cartItemsCount}</button>
         
         {showCartModal && <Cart onClose={handleCartModalClose} />}
+        
     </div>
+    
   )
 }
 

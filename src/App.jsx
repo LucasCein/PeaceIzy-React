@@ -11,6 +11,7 @@ import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
 import Footer from './components/Footer/Footer'
 import InitContainer from './components/InitContainer/InitContainer'
 import Login from './components/Login/Login'
+import ShownavBar from './components/ShownavBar/ShownavBar'
 
 function App() {
  
@@ -18,14 +19,17 @@ function App() {
     <ProviderCartContext>
 
         <BrowserRouter>
-          <NavBar />
+          <ShownavBar>
+            <NavBar />
+
+          </ShownavBar>
           <Routes>
-          {/* <Route
+           <Route
             path='/'
             element={<InitContainer />}
-          /> */}
+            /> 
             <Route 
-            path='/'
+            path='/login'
             element={<Login />} 
             />
             <Route 
