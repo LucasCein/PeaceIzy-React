@@ -3,6 +3,7 @@ import { CartWidget } from "../CartWidget/CartWidget"
 import { Link, NavLink } from "react-router-dom"
 import './navbar.css'
 import LoginWidget from "../LoginWidget/LoginWidget"
+import IconLoginProfile from "../IconLoginProfile/IconLoginProfile"
 export const NavBar = () => {
 
     return (
@@ -41,7 +42,7 @@ export const NavBar = () => {
                         
                     </Nav.Link>
                     <Nav.Link eventKey={2} href="" className="marginCart">
-                        <LoginWidget></LoginWidget>
+                        <IconLoginProfile></IconLoginProfile>
                     </Nav.Link>
                 </Nav>
             </Navbar.Collapse>

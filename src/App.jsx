@@ -12,11 +12,16 @@ import Footer from './components/Footer/Footer'
 import InitContainer from './components/InitContainer/InitContainer'
 import Login from './components/Login/Login'
 import ShownavBar from './components/ShownavBar/ShownavBar'
+import Register from './components/Register/Register'
+import RegisterConfirmation from './components/RegisterConfirmation/RegisterConfirmation'
+import { AuthProvider } from './components/authContext/authContext'
 
 function App() {
- 
+
   return (
-    <ProviderCartContext>
+    <AuthProvider>
+
+      <ProviderCartContext>
 
         <BrowserRouter>
           <ShownavBar>
@@ -24,48 +29,57 @@ function App() {
 
           </ShownavBar>
           <Routes>
-           <Route
-            path='/'
-            element={<InitContainer />}
-            /> 
-            <Route 
-            path='/login'
-            element={<Login />} 
+            <Route
+              path='/'
+              element={<InitContainer />}
             />
-            <Route 
-            path='/productos'
-            element={<ItemListContainer />} 
+            <Route
+              path='/login'
+              element={<Login />}
             />
-            <Route 
-            path='/category/:cpd'
-            element={<ItemListContainer />} 
+            <Route
+              path='/productos'
+              element={<ItemListContainer />}
             />
-            <Route 
-            path='/detail/:idpd'
-            element={<DetailItemContainer />} 
+            <Route
+              path='/category/:cpd'
+              element={<ItemListContainer />}
             />
-            <Route 
-            path='/checkout'
-            element={<Checkout/>} 
+            <Route
+              path='/detail/:idpd'
+              element={<DetailItemContainer />}
             />
-            <Route 
-            path='/orderConfirmation'
-            element={<OrderConfirmation/>} 
+            <Route
+              path='/checkout'
+              element={<Checkout />}
             />
-            <Route 
-            path='/orderConfirmation'
-            element={<OrderConfirmation/>} 
+            <Route
+              path='/orderConfirmation'
+              element={<OrderConfirmation />}
             />
-            <Route 
-            path='*'
-            element={<Navigate to="/"/>} 
+            <Route
+              path='/orderConfirmation'
+              element={<OrderConfirmation />}
             />
-        
+            <Route
+              path='/register'
+              element={<Register />}
+            />
+            <Route
+              path='/registerConfirmation'
+              element={<RegisterConfirmation />}
+            />
+            <Route
+              path='*'
+              element={<Navigate to="/" />}
+            />
+
           </Routes>
-          <Footer/>
+          <Footer />
         </BrowserRouter>
-      
-    </ProviderCartContext>
+
+      </ProviderCartContext>
+    </AuthProvider>
   )
 }
 

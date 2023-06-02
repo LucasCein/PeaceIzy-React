@@ -1,14 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom'
-import './loginForm.css'
-import { useEffect } from 'react'
-const LoginForm = ({ handleLogin, handleEmailChange, handlePasswordChange, email, password,error }) => {
-    const navigation = useNavigate()
-    useEffect(()=>{
-        if(error==='logged'){
-            navigation('/')
-        }
-        console.log(error)
-    },[error])
+import { Link } from "react-router-dom"
+
+const RegisterForm = ({ handleRegister,handleEmailChange, handlePasswordChange, email, password, address,handleAddressChange }) => {
     return (
         <div className='formContainer' >
             <form className="form">
@@ -26,13 +18,18 @@ const LoginForm = ({ handleLogin, handleEmailChange, handlePasswordChange, email
                         value={password}
                         onChange={handlePasswordChange}
                     />
+                    <input
+                        type="text"
+                        placeholder="Direccion"
+                        value={address}
+                        onChange={handleAddressChange}
+                    />
                 </section>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
                 <section>
 
-                    <button className='mt-5 mb-3 button' onClick={handleLogin}>Iniciar sesión</button>
-                    <Link to={"/register"}>
-                        <button className='button' >Registrarse</button>
+                    <button className='mt-5 mb-3 button' onClick={handleRegister}>Registrarse</button>
+                    <Link to={"/login"}>
+                        <button className='button' >Volver</button>
                     </Link>
                 </section>
             </form>
@@ -40,4 +37,4 @@ const LoginForm = ({ handleLogin, handleEmailChange, handlePasswordChange, email
     )
 }
 
-export default LoginForm
+export default RegisterForm

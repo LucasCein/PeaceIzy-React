@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import ProdDestacados from "../../ProdDestacados/ProdDestacados"
 import { collection, getDocs, getFirestore } from "firebase/firestore"
 import './InitContainer.css'
 import { Link } from "react-router-dom"
 import CustomSpinner from "../CustomSpinner/CustomSpinner"
+import ProdDestacados from "../ProdDestacados/ProdDestacados"
 const InitContainer = () => {
     const [productosDest, setProductosDest] = useState([])
     const [loading, setIsLoading] = useState(true)

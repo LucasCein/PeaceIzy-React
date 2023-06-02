@@ -1,9 +1,10 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import Item from '../components/Item/Item'
+import Item from '../Item/Item'
+
 
 const ProdDestacados = ({ productosDest }) => {
-    console.log(productosDest)
+    
     return (
         <div>
             <Row xs={1} md={3} className="ms-2 me-2 mt-2">
