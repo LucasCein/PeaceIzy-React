@@ -14,7 +14,7 @@ import Login from './components/Login/Login'
 import ShownavBar from './components/ShownavBar/ShownavBar'
 import Register from './components/Register/Register'
 import RegisterConfirmation from './components/RegisterConfirmation/RegisterConfirmation'
-import { AuthProvider } from './components/authContext/AuthContext'
+import { AuthProvider } from './components/authContext/authContext'
 
 function App() {
 
