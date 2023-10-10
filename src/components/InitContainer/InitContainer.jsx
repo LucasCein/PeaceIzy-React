@@ -24,7 +24,7 @@ const InitContainer = () => {
             {loading ? <CustomSpinner /> :
                 <div>
                     <section className="cont">
-                        <img src="https://www.facebook.com/photo/?fbid=620073173585503&set=a.581021950823959" alt="" className="img-fluid" />
+                        <img src="https://helpsnowboards.com/wp-content/uploads/2023/01/01122020101549F3240007P88__DSC0086-copia-scaled.jpeg" alt="" className="img-fluid" />
                         <Link to={'/productos'}>
                             <button className="button">Comprar</button>
                         </Link>
