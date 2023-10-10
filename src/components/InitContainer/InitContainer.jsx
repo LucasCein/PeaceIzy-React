@@ -24,7 +24,7 @@ const InitContainer = () => {
             {loading ? <CustomSpinner /> :
                 <div>
                     <section className="cont">
-                        <img src="https://www.dopesnowargentina.com/images/hoverimg/202301051450491835.jpg" alt="" className="img-fluid" />
+                        <img src="https://www.facebook.com/photo/?fbid=620073173585503&set=a.581021950823959" alt="" className="img-fluid" />
                         <Link to={'/productos'}>
                             <button className="button">Comprar</button>
                         </Link>
